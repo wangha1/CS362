@@ -1,0 +1,61 @@
+Here is the test code return from adventurer:
+
+      ---Checking for adventurer cards......---
+Checking for treasure cards from drawn cards......
+......NOT PASSED
+......PASSED
+Checking for number of cards in hand......
+Count = 7, expected = 7
+......PASSED
+Checking for number of cards in deck......
+Count = 4, expected = 3
+......NOT PASSED
+Checking for in-hand cards of other players......
+Count = 0, expected = 0
+......PASSED
+Checking for decks of other players......
+Count = 10, expected = 10
+......PASSED
+Checking for victory pile......
+Count = 8, expected = 8
+......PASSED
+Count = 8, expected = 8
+......PASSED
+Count = 8, expected = 8
+......PASSED
+note that there are bugs appear when checking treasure cards and number of cards in deck. That’s two bugs. The first bug cause by the first while loop, it breaks when drawn one treasure card, the second one caused by second while loop, it doesn’t discard every card that drawn.
+
+and the village: 
+
+----------------- Testing Card: village ----------------
+Checking for +1 cards...
+Hand count = 5, expected = 5
+Deck count = 4, expected = 4
+...PASSED
+Checking for +2 actions...
+Actions = 1, expected = 3
+...NOT PASSED
+
+didn’t +2 actions properly, one less. caused by state->numActions = state->numActions + 1; should +2 instead.
+
+smithy:
+
+----------------- Testing Card: smithy ----------------
+checking for +3 cards...
+hand count = 6, expected = 7
+deck count = 3, expected = 2
+...NOT PASSED
+didn’t +3 cards properly, one less. This is funny because it seems cause by loops but when I check the original code I can’t find wrongs in loops, but than I realize it caused by initialing the iterator “i” of the loop, it should be initial as 0 rather than 1.
+
+council_room:
+
+----------------- Testing Card: council_room ----------------
+Checking for +4 cards...
+Hand count = 9, expected = 8
+Deck count = 0, expected = 1
+...NOT PASSED
+Checking for +1 buy...
+Buys = 1, expected = 2
+...NOT PASSED
+
+didn’t passed any test, because it draw the card when player is yourself rather than others.

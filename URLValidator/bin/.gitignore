@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.settings/
+/DomainValidator.class
+/InetAddressValidator.class
+/RegexValidator.class
+/ResultPair.class
+/UrlValidator.class
+/UrlValidatorTest.class
+/UrlsToVerify.txt

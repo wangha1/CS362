@@ -1,0 +1,2 @@
+https://www.google.com valid
+https://///www.google.com invalid
